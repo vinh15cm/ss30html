@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Hàm chuyển các ký tự cuối cùng của mỗi từ trong chuỗi thành chữ hoa
+        function capitalizeLastCharacter(inputString) {
+            // Tách chuỗi thành mảng các từ
+            const wordsArray = inputString.split(' ');
+
+            // Chuyển đổi ký tự cuối cùng của mỗi từ thành chữ hoa
+            const modifiedWords = wordsArray.map(word => {
+                const lastCharIndex = word.length - 1;
+                const modifiedWord = word.substring(0, lastCharIndex) + word[lastCharIndex].toUpperCase();
+                return modifiedWord;
+            });
+
+            // Gắn các từ đã sửa lại vào một chuỗi mới
+            const resultString = modifiedWords.join(' ');
+
+            return resultString;
+        }
+
+        // Nhập chuỗi từ người dùng
+        const userInput = prompt("Nhập một chuỗi bất kỳ:");
+
+        // Gọi hàm và in kết quả ra màn hình
+        const modifiedString = capitalizeLastCharacter(userInput);
+        console.log(modifiedString);
+    </script>
+</body>
+
+</html>
